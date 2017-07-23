@@ -1,0 +1,11 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <main class="main-content">
+    <article class="post">
+      <h2 class="post-title">{{ post.title }}</h2>
+      <h5 class="post-date">{{ post.createdAt }}</h5>
+      <p class="post-short">{{ post.body }}</p>
+    </article>
+  </main>
+{% endblock %}

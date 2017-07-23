@@ -1,0 +1,23 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <main class="main-content">
+    {% if posts.length > 0 %}
+      {% for post in posts %}
+        <article class="post">
+          <h2 class="post-title">{{ post.title }}</h2>
+          <h5 class="post-date">{{ post.createdAt }}</h5>
+          {# <h5 class="post-date">14 de Janeiro de 2017</h5> #}
+          <p class="post-short">{{ post.body }}...</p>
+          <div class="post-actions">
+            <a href="/posts/{{ post.slug }}" class="post-action">Continue lendo...</a>
+          </div>
+        </article>
+      {% endfor %}
+    {% else %}
+      <article class="post">
+        <h1>Nenhum post encontrado!</h1>
+      </aticle>
+    {% endif %}
+  </main>
+{% endblock %}
